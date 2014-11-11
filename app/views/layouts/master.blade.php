@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-	{{ View::make('partials.navigation') }}
+	{{ View::make('partials.navigation', array('loggedIn' => Auth::check())) }}
 	@yield('content')
 </div>
 </body>

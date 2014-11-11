@@ -10,14 +10,16 @@ class AuthController extends \BaseController {
 
     public function index()
     {
-
+        if(Auth::check()) {
+            return Redirect::to('/');
+        }
         return View::make('auth.index');
     }
 
     public function login()
     {
-        $email = "tsergium@gmail.com";
-        $password = "luxaeterna";
+        $email = Input::get('email');
+        $password = Input::get('password');
         $status = 1;
 
         if(!Auth::check()) {

@@ -26,7 +26,11 @@
             <li><a href="/projects">Projects</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <?php if($loggedIn){ ?>
+                <li><a href="/auth/logout">Log Out</a></li>
+            <?php }else{ ?>
             <li><a href="/auth">Login</a></li>
+            <?php } ?>
         </ul>
     </div>
 </nav>
