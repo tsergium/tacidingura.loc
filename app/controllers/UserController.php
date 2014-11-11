@@ -10,7 +10,7 @@ class UserController extends \BaseController {
 	public function index()
 	{
 		$pageName = 'Users List';
-		$results = User::paginate(10);
+		$results = User::paginate(12);
 		return View::make('user.index', array('users' => $results, 'pageName' => $pageName));
 	}
 
@@ -51,6 +51,7 @@ class UserController extends \BaseController {
             $user->firstname	= Input::get('firstname');
             $user->lastname		= Input::get('lastname');
             $user->gender		= Input::get('gender');
+            $user->facebook_id  = Input::get('facebook_id');
             $user->save();
             //DB::insert('insert into users (firstname, lastname, gender) values (?, ?)', array(Input::get('firstname'), Input::get('lastname'), Input::get('gender')));
             // redirect
