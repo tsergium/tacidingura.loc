@@ -23,6 +23,11 @@
         {{ Form::select('gender', array('0' => 'Male', '1' => 'Female'), Input::old('gender'), array('class' => 'form-control')) }}
     </div>
 
+    <div class="form-group">
+        {{ Form::label('facebook_id', 'Facebook Id') }}
+        {{ Form::text('facebook_id', Input::old('facebook_id'), array('class' => 'form-control')) }}
+    </div>
+
     {{ Form::submit('Create the Nerd!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}

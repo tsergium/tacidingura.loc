@@ -11,7 +11,9 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td class="col-md-1">ID</td>
+            @if ($user->facebook_id)
+            <td class="col-md-1">Profile</td>
+            @endif
             <td class="col-md-6">Name</td>
             <td class="col-md-2">Email</td>
             <td class="col-md-2">Gender</td>
@@ -20,7 +22,9 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{ $user->id }}</td>
+            @if ($user->facebook_id)
+            <td><img class="img-circle" src="https://graph.facebook.com/{{ $user->facebook_id }}/picture"></td>
+            @endif
             <td>{{ $user->firstname }}</td>
             <td>{{ $user->lastname }}</td>
             <td>@if ($user->gender) female @else male @endif</td>

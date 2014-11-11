@@ -2,6 +2,11 @@
 // home
 Route::get('/', 'HomeController@index');
 
+// auth
+Route::get('/auth', 'AuthController@index');
+Route::post('/auth/login', 'AuthController@login');
+Route::get('/auth/logout', 'AuthController@logout');
+
 // users
 Route::get('user', 'UserController@index');
 Route::get('user/create', 'UserController@create');

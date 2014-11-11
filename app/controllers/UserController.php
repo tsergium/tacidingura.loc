@@ -22,6 +22,10 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
+        if(!Auth::check()) {
+            return Redirect::to('user');
+        }
+
 		return View::make('user.create');
 	}
 
@@ -85,30 +89,4 @@ class UserController extends \BaseController {
 		$user = User::find($id);
 		return View::make('user.edit', array('user' => $user));
 	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
-
 }

@@ -29,6 +29,10 @@ class TaskController extends \BaseController {
 	 */
 	public function create($id)
 	{
+        if(!Auth::check()) {
+            return Redirect::to('task');
+        }
+
 		$pageName = 'Create Task';
 		return View::make(
 			'task.create',
@@ -100,6 +104,10 @@ class TaskController extends \BaseController {
 	 */
 	public function edit($id)
 	{
+        if(!Auth::check()) {
+            return Redirect::to('task');
+        }
+
 		$task = Task::find($id);
 		$pageName = $task->title;
 		$projectId = $task->project_id;

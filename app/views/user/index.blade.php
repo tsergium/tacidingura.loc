@@ -23,34 +23,22 @@
 						<div class="alert alert-info">{{ Session::get('message') }}</div>
 					@endif
 
-					<table class="table table-striped table-bordered">
-						<thead>
-							<tr>
-								<td>ID</td>
-								<td>Name</td>
-								<td>Email</td>
-								<td>Gender</td>
-								<td class="col-md-2">Actions</td>
-							</tr>
-						</thead>
-						<tbody>
-						@foreach($users as $key => $value)
-							<tr>
-								<td>{{ $value->id }}</td>
-								<td>{{ $value->firstname }}</td>
-								<td>{{ $value->lastname }}</td>
-								<td>@if ($value->gender) female @else male @endif</td>
-								<td>
-									<div class="btn-group btn-group-justified">
-										<a class="btn btn-default btn-xs" href="{{ URL::to('user/' . $value->id) }}">show</a>
-										<a class="btn btn-default btn-xs" href="{{ URL::to('user/' . $value->id . '/edit') }}">edit</a>
-									</div>
-								</td>
-							</tr>
-						@endforeach
-						</tbody>
-					</table>
-					<center><?php echo $users->links() ?></center>
+					@foreach($users as $key => $user)
+                        <div class="col-md-4">
+                            <div class="col-md-2">@if ($user->facebook_id)<img class="img-circle" src="https://graph.facebook.com/{{ $user->facebook_id }}/picture">@endif</div>
+                            <div class="col-md-10">
+                                <div class="col-md-12"><span class="firstname">{{ $user->firstname }}</span> <span class="lastname">{{ $user->lastname }}</span> <small class="gender">(<i>@if ($user->gender) f @else m @endif</i>)</small></div>
+                                <div class="col-md-12 btn-group btn-group-justified">
+                                    <a class="btn btn-default btn-xs" href="{{ URL::to('user/' . $user->id) }}">show</a>
+                                    <a class="btn btn-default btn-xs" href="{{ URL::to('user/' . $user->id . '/edit') }}">edit</a>
+                                </div>
+                            </div>
+                        </div>
+                        @if (($key +1) % 3 == 0 )
+                        <div class="col-md-12">&nbsp;</div>
+                        @endif
+					@endforeach
+					<div class="col-md-12"><?php echo $users->links() ?></div>
 				</div>
 			</div>
 		</div>
