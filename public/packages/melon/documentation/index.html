@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>MelonHTML5 - Timeline</title>
+        <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreRDark.css"/>
+        <link type="text/css" rel="stylesheet" href="assets/style.css"/>
+        <script type="text/javascript" src="assets/jquery.js"></script>
+        <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+        <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPhp.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                SyntaxHighlighter.all();
+            });
+        </script>
+    </head>
+    <body>
+        <header></header>
+        <div id="wrapper">
+            <h1>Step1: Include Files</h1>
+            <p>Include JavaScript and CSS files in <b>HEAD</b> tag.</p>
+            <pre class="brush: js; toolbar: false; auto-links: false;">
+                &lt;link rel="stylesheet" type="text/css" href="timeline.css" /&gt;
+                &lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+                &lt;script type="text/javascript" src="timeline.min.js"&gt;&lt;/script&gt;
+            </pre>
+            <div class="hr"></div>
+            <h1>Step2: Display Timeline</h1>
+            <p>Add the HTML and Script below to the body of your HTML (where you want to display the timeline).</p>
+            <pre class="brush: js; toolbar: false; auto-links: false;">
+                &lt;div id="timeline"&gt;&lt;/div&gt;
+
+                &lt;script type="text/javascript"&gt;
+                    $(document).ready(function() {
+                        var timeline_data = [
+                            {
+                                type:        'blog_post',
+                                date:        '2011-08-03',
+                                dateFormat:  'DD MMMM YYYY',
+                                title:       'Blog Post',
+                                content:     '',
+                                images:      ['xxxx.jpg'],
+                                readmore:    'http://www.example.com'
+                            },
+                            {
+                                type:        'blog_post',
+                                date:        '2010-12-16',
+                                dateFormat:  'DD MMMM YYYY',
+                                height:      200,
+                                images:      ['xxx.jpg', 'xxx.jpg'],
+                                speed:       5000
+                            }
+                        ];
+
+                        var timeline = new Timeline($('#timeline'), timeline_data);
+                        timeline.display();
+                    });
+                &lt;/script&gt;
+            </pre>
+            <div class="hr"></div>
+            <h1>Configuration options</h1>
+            <p><span class="c">setOptions()</span>. For initial declarative timeline setup. Options are all optional.</p>
+            <pre class="brush: js; toolbar: false; auto-links: false;">
+                &lt;script type="text/javascript"&gt;
+                    var timeline = new Timeline($('#timeline'), timeline_data);
+                    timeline.setOptions({
+                        dateFormat:  'DD MMMM YYYY',
+                        animation:   true,
+                        lightbox:    true,
+                        separator:   'year',
+                        columnMode:  'dual',
+                        order:       'desc',
+                        max:         null
+                    });
+                    timeline.display();
+                &lt;/script&gt;
+            </pre>
+            <ul>
+                <li>
+                    <div class="opt_name"><b>dateFormat</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">DD MMMM YYYY</span>. Enable/Disable <b>animation</b> when timeline is first displayed. See <a href="http://momentjs.com/docs/#/displaying/format/">http://momentjs.com/docs/#/displaying/format/</a> for more details.
+                        <table cellspacing="0" cellpadding="0" style="font-size:12px;">
+                            <tr><td colspan="2">&nbsp;</td></tr>
+                            <tr><td colspan="2"><strong>Month</strong></td></tr>
+                            <tr><td width="100">M</td><td>1 2 ... 11 12M</td></tr>
+                            <tr><td>Mo</td><td>1st 2nd ... 11th 12th</td></tr>
+                            <tr><td>MM</td><td>01 02 ... 11 12</td></tr>
+                            <tr><td>MMM</td><td>Jan Feb ... Nov Dec</td></tr>
+                            <tr><td>MMMM</td><td>January February ... November December</td></tr>
+                            <tr><td colspan="2">&nbsp;</td></tr>
+                            <tr><td colspan="2"><strong>Day</strong></td></tr>
+                            <tr><td>D</td><td>1 2 ... 30 30</td></tr>
+                            <tr><td>Do</td><td>1st 2nd ... 30th 31st</td></tr>
+                            <tr><td>DD</td><td>01 02 ... 30 31</td></tr>
+                            <tr><td colspan="2">&nbsp;</td></tr>
+                            <tr><td colspan="2"><strong>Year</strong></td></tr>
+                            <tr><td>YY</td><td>70 71 ... 29 30</td></tr>
+                            <tr><td>YYYY</td><td>1970 1971 ... 2029 2030</td></tr>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>animation</b><span class="t">Boolean</span></div>
+                    <div class="opt_detail">Default value: <span class="c">true</span>. Enable/Disable <b>animation</b> when timeline is first displayed.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>lightbox</b><span class="t">Boolean</span></div>
+                    <div class="opt_detail">Default value: <span class="c">true</span>. Enable/Disable <b>lightbox feature</b> when an image is clicked.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>separator</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">year</span>. Set <b>separator</b> type. Possible values: <span class="c">null</span>, <span class="c">year</span>, <span class="c">month</span>, <span class="c">month_year</span></div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>first_separator</b><span class="t">Boolean</span></div>
+                    <div class="opt_detail">Default value: <span class="c">false</span>. Set to display the first separator. Possible values: <span class="c">true</span>, <span class="c">false</span></div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>columnMode</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">dual</span>. Set what <b>column mode</b> to use. Possible values: <span class="c">dual</span>, <span class="c">left</span>, <span class="c">right</span>, <span class="c">center</span>.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>order</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">desc</span>. Set <b>timeline elements order</b>. Possible values: <span class="c">desc</span>, <span class="c">asc</span>.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>max</b><span class="t">Int</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set maximum number of timeline elements to be displayed.
+                </li>
+                <li>
+                    <div class="opt_name"><b>loadmore</b><span class="t">Int</span></div>
+                    <div class="opt_detail">Default value: <span class="c">0</span>. Set how many additional data to load when clicking on "Load More". This options needs to be used with max together.
+                </li>
+                <li>
+                    <div class="opt_name"><b>facebookAccessToken</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set the facebook access token required to access Facebook Posts. The access token can be found at "https://graph.facebook.com/oauth/access_token?client_id={app-id}&client_secret={app-secret}&grant_type=client_credentials".
+                </li>
+                <li>
+                    <div class="opt_name"><b>facebookPageId</b><span class="t">Int</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set where to pull the facebook posts from.
+                </li>
+            </ul>
+            <div class="hr"></div>
+            <h1>Timeline Data</h1>
+            <p>Timeline data is an array of JSON objects. Each object represents one timeline element. Different element type has different object properties.</p>
+            <pre class="brush: js; toolbar: false; auto-links: false;">
+                var timeline_data = [
+                    {
+                        type:        'blog_post',
+                        date:        '2011-08-03',
+                        dateFormat:  'DD MMMM YYYY',
+                        title:       'Blog Post',
+                        content:     '',
+                        images:      ['xxxx.jpg'],
+                        readmore:    'http://www.example.com'
+                    },
+                    {
+                        type:        'blog_post',
+                        date:        '2010-12-16',
+                        dateFormat:  'DD MMMM YYYY',
+                        images:      ['xxx.jpg', 'xxx.jpg'],
+                        speed:       5000
+                    }
+                ];
+            </pre>
+
+            <ul>
+                <li>
+                    <div class="opt_name"><b>blog_post</b></div>
+                    <div class="opt_detail">
+                        <div><img src="assets/blog_post_element.png" /></div>
+                        <pre class="brush: js; toolbar: false; auto-links: false;">
+                            {
+                                type:        'blog_post',
+                                date:        '2011-08-03',
+                                dateFormat:  'DD MMMM YYYY',
+                                title:       'Blog Post',
+                                content:     '',
+                                image:       '001.jpg',
+                                readmore:    'http://www.example.com'
+                            }
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>gallery</b></div>
+                    <div class="opt_detail">
+                        <div><img src="assets/gallery_element.png" /></div>
+                        <pre class="brush: js; toolbar: false; auto-links: false;">
+                            {
+                                type:        'gallery',
+                                date:        '2011-08-03',
+                                dateFormat:  'DD MMMM YYYY',
+                                title:       'Blog Post',
+                                image:        ['xxx.jpg', 'xxx.jpg']
+                            }
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>iframe</b></div>
+                    <div class="opt_detail">
+                        <div><img src="assets/iframe_element.png" /></div>
+                        <pre class="brush: js; toolbar: false; auto-links: false;">
+                            {
+                                type:        'iframe',
+                                date:        '2011-08-03',
+                                dateFormat:  'DD MMMM YYYY',
+                                title:       'Blog Post',
+                                height:      300,
+                                url:         'http://www.youtube.com/embed/0ZQBRsEyN1E?wmode=opaque'
+                            }
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div class="opt_name"><b>type</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">blog_post</span>. Define timeline element type. Possible values: <span class="c">blog_post</span>, <span class="c">gallery</span>, <span class="c">iframe</span>.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>date</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">2000-01-01</span>. Set timeline element data. Format: <span class="c">yyyy-mm-dd</span>. When month or day are unknown, set them to <span class="c">01</span>, then use <span class="c">dateFormat</span> to not display them.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>dateFormat</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span> (02 February 2013). Specify a <span class="c">dateFormat</span> in element data overwrites the overall <span class="c">dateFormat option</span><br></div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>height</b><span class="t">Integer</span></div>
+                    <div class="opt_detail">Default value: <span class="c">300</span>. Set element height for gallery or iframe.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>title</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set timeline element title.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>content</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set content for blog post or gallery element.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>image</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set image for blog post element.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>readmore</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set read more URL for blog post element.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>images</b><span class="t">Array</span></div>
+                    <div class="opt_detail">Default value: <span class="c">empty</span>. An array of images used in gallery or blog post element.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>speed</b><span class="t">Integer</span></div>
+                    <div class="opt_detail">Default value: <span class="c">5000</span>. Set animation speed for sliders in blog post element in million seconds.</div>
+                </li>
+                <li>
+                    <div class="opt_name"><b>url</b><span class="t">String</span></div>
+                    <div class="opt_detail">Default value: <span class="c">null</span>. Set iframe URL for iframe element.</div>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <a href="http://www.melonhtml5.com" target="_blank">@ MelonHTML5</a>
+        </footer>
+    </body>
+</html>

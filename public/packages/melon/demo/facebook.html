@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="../files/css/timeline.css" />
+        <script type="text/javascript" src="../files/javascript/jquery.js"></script>
+        <script type="text/javascript" src="../files/javascript/timeline.min.js"></script>
+        <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                alert('You will need to setup the facebookAccessToken frist!');
+
+                var timeline = new Timeline($('#timeline'));
+                timeline.setOptions({
+                    animation:            true,
+                    lightbox:             true,
+                    separator:            'year',
+                    columnMode:           'dual',
+                    facebookPageId:       185704501540425,
+                    facebookAccessToken: '%REPLACE THIS WITH YOUR OWN FACEBOOK ACCESS TOKEN%' // https://graph.facebook.com/oauth/access_token?client_id={app-id}&client_secret={app-secret}&grant_type=client_credentials
+                });
+                timeline.display();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="timeline" style="width:80%;max-width:800px;margin:auto;"></div>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="../files/css/timeline.css" />
+        <script type="text/javascript" src="../files/javascript/jquery.js"></script>
+        <script type="text/javascript" src="../files/javascript/timeline.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var timeline_data = [
+                    {
+                        type:       'blog_post',
+                        date:       '2012-09-03 10:23:00',
+                        dateFormat: 'D/MM/YY h:mm A',  // overwrite the overall dateFormat setting
+                        title:      'FA Cup',
+                        content:    'The Reds go marching on in the FA Cup...',
+                        images:     ['images/facup.jpg']
+                    },
+                    {
+                        type:       'blog_post',
+                        date:       '2012-09-03 22:12:12',
+                        title:      'Swansea',
+                        content:    'Check out our exclusive video preview ahead of today\'s clash with Swansea <a href="http://bit.ly/Yz0bmZ" target="_blank">http://bit.ly</a>',
+                        images:     ['images/rio.jpg']
+                    },
+                    {
+                        type:       'blog_post',
+                        date:       '2011-07-15 14:22:22',
+                        title:      'Manchester United VS Liverpool',
+                        content:    'The Reds complete the double over Liverpool this season...',
+                        images:     ['images/evra.jpg']
+                    },
+                    {
+                        type:       'blog_post',
+                        date:       '2011-06-29',
+                        title:      'Michael Carrick',
+                        content:    'Last chance to win Michael Carrick\'s signed shirt from the Liverpool game!! Click this link to enter <a href="http://bit.ly/W03U8k" target="_blank">http://bit.ly</a>',
+                        images:     ['images/carric.jpg']
+                    },
+                    {
+                        type:       'blog_post',
+                        date:       '2011-04-02',
+                        title:      'Match',
+                        content:    '9 Premier League wins out of 10 this season at Old Trafford. What is your match of the season so far at the Theatre of Dreams?',
+                        images:     ['images/wigan.jpg']
+                    },
+                    {
+                        type:       'blog_post',
+                        date:       '2011-02-13',
+                        title:      'Old Traffordt',
+                        content:    'Check out our exclusive video preview ahead of today\'s clash with Swansea <a href="http://bit.ly/Yz0bmZ" target="_blank">http://bit.ly</a>',
+                        images:     ['images/home.jpg']
+                    }
+                ];
+
+                timeline = new Timeline($('#timeline'), timeline_data);
+                timeline.setOptions({
+                    dateFormat:          'DD MMMM YYYY HH:mm',
+                    animation:           true,
+                    lightbox:            true,
+                    columnMode:          'dual',
+                    order:               'desc',
+                    separator:           'year',
+                    first_separator:     false,
+                    responsive_width:    800
+                });
+                timeline.display();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="timeline" style="width:80%;max-width:800px;margin:auto;"></div>
+    </body>
+</html>

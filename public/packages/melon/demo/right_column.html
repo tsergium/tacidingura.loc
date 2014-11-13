@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="../files/css/timeline.css" />
+        <script type="text/javascript" src="../files/javascript/jquery.js"></script>
+        <script type="text/javascript" src="../files/javascript/timeline.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var timeline_data = [
+                    {
+                        type:     'blog_post',
+                        date:     '2011-12-16',
+                        height:   150,
+                        images:   ['images/group.jpg', 'images/old.jpg', 'images/win.jpg'],
+                        speed:    5000
+                    },
+                    {
+                        type:     'gallery',
+                        date:     '2011-04-12',
+                        title:    'Mini Gallery',
+                        height:   100,
+                        images:   ['images/rooney.jpg', 'images/tshirt.jpg', 'images/giggs.jpg', 'images/rio.jpg', 'images/paper.jpg']
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2011-08-03',
+                        title:    'Blog Post',
+                        content:  '<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+                        images:   ['images/rio.jpg'],
+                        readmore: 'http://www.manutd.com'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2010-12-16',
+                        height:   200,
+                        images:   ['images/ferguson.jpg', 'images/paper.jpg'],
+                        speed:    5000
+                    },
+                    {
+                        type:     'gallery',
+                        date:     '2010-04-12',
+                        title:    'Mini Gallery',
+                        height:   150,
+                        images:   ['images/stadium.jpg', 'images/rafel.jpg', 'images/logo.jpg', 'images/rvp.jpg']
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2010-08-03',
+                        title:    'Blog Post',
+                        content:  '<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+                        images:   ['images/evra.jpg'],
+                        readmore: 'http://www.manutd.com'
+                    }
+                ];
+
+                var timeline = new Timeline($('#timeline'), timeline_data);
+                timeline.setOptions({
+                    animation:   true,
+                    lightbox:    true,
+                    separator:   'year',
+                    columnMode:  'right',
+                    order:       'desc'
+                });
+                timeline.display();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="timeline" style="width:500px;margin:auto;"></div>
+    </body>
+</html>

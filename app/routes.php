@@ -2,6 +2,12 @@
 // home
 Route::get('/', 'HomeController@index');
 
+// tenancy
+Route::get('/tenancy', 'TenancyController@index');
+
+// articles
+Route::get('/articles', 'ArticlesController@index');
+
 // auth
 Route::get('/auth', 'AuthController@index');
 Route::post('/auth/login', 'AuthController@login');
@@ -13,6 +19,7 @@ Route::get('user/create', 'UserController@create');
 Route::get('user/{id}/edit', 'UserController@edit');
 Route::post('user/store', 'UserController@store');
 Route::get('user/{id}', 'UserController@show');
+Route::get('user/destroy/{id}', 'UserController@destroy');
 
 // projects
 Route::get('projects', 'ProjectController@index');

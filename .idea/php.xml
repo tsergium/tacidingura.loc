@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Behat">
+    <behat_settings>
+      <BehatSettings behat_path="$PROJECT_DIR$" />
+    </behat_settings>
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="" phpunit_phar_path="" />
+      <phpunit_by_interpreter interpreter_id="b6f1a0b7-0563-4488-b6c8-9308d7c80ff5" interpreter_name="Remote PHP 5.5" load_method="CUSTOM_LOADER" custom_loader_path="/usr/local/bin/phpunit" phpunit_phar_path="/usr/local/bin/phpunit" />
+    </phpunit_settings>
+  </component>
+</project>
+

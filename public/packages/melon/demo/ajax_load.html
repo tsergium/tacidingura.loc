@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="../files/css/timeline.css" />
+        <script type="text/javascript" src="../files/javascript/jquery.js"></script>
+        <script type="text/javascript" src="../files/javascript/timeline.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var init_data = [
+                    {
+                        type:     'blog_post',
+                        date:     '2013-12-09',
+                        title:    'Blog Post',
+                        content:  '<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2013-11-09',
+                        title:    'Blog Post',
+                        content:  '<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+                    }
+                ];
+
+                var timeline = new Timeline($('#timeline'), init_data);
+                timeline.setOptions({
+                    animation:       true,
+                    lightbox:        true,
+                    first_separator: true,
+                    separator:       'year',
+                    columnMode:      'dual',
+                    order:           'desc'
+                });
+                timeline.display();
+
+                // menu click
+                $(document).on('click', '#menu > div', function(e) {
+                    $.scrollTo('#timeline_date_separator_' + $(this).text(), 500);
+                });
+
+                // load more click
+                var year = 2013;
+                $('#loadmore').on('click', function(e) {
+                    var button = $(this);
+
+                    if (button.hasClass('loading')) {
+                        return;
+                    }
+
+                    year--;
+                    button.addClass('loading').text('Loading...');
+
+                    $.ajax('ajax_data.php', {
+                        type     : 'POST',
+                        dataType : 'json',
+                        data     : {year: year},
+                        success  : function(data) {
+                            // remove loading
+                            button.removeClass('loading').text('Load More');
+
+                            // add a new menu item
+                            $('<div>').text(year).appendTo($('#menu'));
+
+                            // append new data
+                            timeline.appendData(data);
+
+                            // scroll to new data
+                            $.scrollTo('#timeline_date_separator_' + year, 500);
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="menu">
+            <div>2013</div>
+        </div>
+        <div id="timeline" style="width:80%;max-width:800px;margin:auto;"></div>
+        <div id="loadmore">Load More</div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="../files/css/timeline_theme3.css" />
+        <script type="text/javascript" src="../files/javascript/jquery.js"></script>
+        <script type="text/javascript" src="../files/javascript/timeline.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var timeline_data = [
+                    {
+                        type:     'blog_post',
+                        date:     '2014-12-16',
+                        title:    'Keynote',
+                        content:  'Level 3'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-12-11',
+                        title:    'Android Studio startup station',
+                        content:  'Code Lab'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-12-07',
+                        title:    'Anroid and cloud',
+                        content:  'Develop Sandbox: Android'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-11-29',
+                        title:    'NVIDIA tooling and performance',
+                        content:  'Develop Andbox: Android NDK / Gaming Performance'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-11-28',
+                        title:    'Jank-free performance audits',
+                        content:  'Develop Sandbox: Chrome'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-11-18',
+                        title:    'Predicting the future in the Cloun',
+                        content:  'Develop Sandbox: Cloud'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-11-16',
+                        title:    'End-to-end testing and continuous integration with Dart',
+                        content:  'Develop Sandbox: Dart'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-11-03',
+                        title:    'Organizing code and managing dependencies',
+                        content:  'Develop Sandbox: Go'
+                    },
+                    {
+                        type:     'blog_post',
+                        date:     '2014-11-02',
+                        title:    'Education APIs',
+                        content:  'School Sandbox: Teaching Theater'
+                    }
+                ];
+
+                var timeline = new Timeline($('#timeline'), timeline_data);
+                timeline.setOptions({
+                    animation:   true,
+                    lightbox:    true,
+                    separator:   false,
+                    columnMode:  'right',
+                    order:       'desc'
+                });
+                timeline.display();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="timeline" style="width:500px;margin:auto;"></div>
+    </body>
+</html>

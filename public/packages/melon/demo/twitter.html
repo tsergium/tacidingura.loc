@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="../files/css/timeline.css" />
+        <script type="text/javascript" src="../files/javascript/jquery.js"></script>
+        <script type="text/javascript" src="../files/javascript/timeline.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var timeline = new Timeline($('#timeline'));
+                timeline.setOptions({
+                    animation:           true,
+                    lightbox:            true,
+                    separator:           'year',
+                    columnMode:          'dual',
+                    twitterSearchKey:    'Envato'
+                });
+                timeline.display();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="timeline" style="width:80%;max-width:800px;margin:auto;"></div>
+    </body>
+</html>

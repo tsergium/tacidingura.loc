@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="../files/css/timeline.css" />
+        <script type="text/javascript" src="../files/javascript/jquery.js"></script>
+        <script type="text/javascript" src="../files/javascript/timeline.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var data = [];
+                for (var i = 1; i <= 50; i++) {
+                    data.push({
+                        type:     'blog_post',
+                        date:     '200' + (Math.floor(Math.random() * 10)) + '-08-' + Math.floor(Math.random() * 2 + 1) + Math.floor(Math.random() * 9),
+                        title:    'Blog Post',
+                        content:  '<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+                    });
+                }
+
+                var timeline = new Timeline($('#timeline'), data);
+                timeline.setOptions({
+                    animation:       true,
+                    lightbox:        true,
+                    first_separator: true,
+                    max:             10,
+                    loadmore:        5,
+                    separator:       'year',
+                    columnMode:      'dual',
+                    order:           'desc'
+                });
+                timeline.display();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="timeline" style="width:80%;max-width:800px;margin:auto;"></div>
+    </body>
+</html>

@@ -14,10 +14,10 @@
             @if ($user->facebook_id)
             <td class="col-md-1">Profile</td>
             @endif
-            <td class="col-md-6">Name</td>
+            <td class="col-md-5">Name</td>
             <td class="col-md-2">Email</td>
             <td class="col-md-2">Gender</td>
-            <td class="col-md-1">Actions</td>
+            <td class="col-md-2">Actions</td>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +31,7 @@
             <td>
 				<div class="btn-group btn-group-justified">
 					<a class="btn btn-default btn-xs" href="{{ URL::to('user/' . $user->id . '/edit') }}">edit</a>
+					<a class="btn btn-default btn-xs" href="{{ URL::to('user/destroy/' . $user->id) }}">delete</a>
 				</div>
             </td>
         </tr>

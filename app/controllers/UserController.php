@@ -89,4 +89,21 @@ class UserController extends \BaseController {
 		$user = User::find($id);
 		return View::make('user.edit', array('user' => $user));
 	}
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        if($user)
+        {
+            $user->delete();
+            Session::flash('message', 'Successfully deleted user!');
+        }
+        return Redirect::to('user');
+    }
 }

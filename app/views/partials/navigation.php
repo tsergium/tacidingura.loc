@@ -22,8 +22,10 @@
 
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
+            <li><a href="/articles">Articles</a></li>
             <li><a href="/user">Users</a></li>
             <li><a href="/projects">Projects</a></li>
+            <li><a href="/tenancy">Tenancy</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <?php if($loggedIn){ ?>
