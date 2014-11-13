@@ -7,6 +7,7 @@ Route::get('/tenancy', 'TenancyController@index');
 
 // articles
 Route::get('/articles', 'ArticlesController@index');
+Route::get('/article/{id}', 'ArticlesController@show');
 
 // auth
 Route::get('/auth', 'AuthController@index');

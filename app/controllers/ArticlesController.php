@@ -13,4 +13,15 @@ class ArticlesController extends \BaseController {
         $results = Articles::orderBy('added', 'desc')->paginate(5);
         return View::make('articles.index', array('articles' => $results, 'pageName' => $pageName));
     }
+
+    public function show($id)
+    {
+        $article = Articles::find($id);
+        if(!$article){}
+
+        $pageName = $article->name;
+        View::share('seo_title', $pageName);
+
+        return View::make('articles.show', array('article' => $article, 'pageName' => $pageName));
+    }
 }

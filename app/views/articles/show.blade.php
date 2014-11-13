@@ -1,0 +1,26 @@
+@extends('layouts.tacidingura')
+@section('content')
+	<div class="row">
+		<div class="col-md-12">
+			<ol class="breadcrumb">
+				<li><a href="/">Home</a></li>
+				<li>{{ $pageName }}</li>
+			</ol>
+		</div>
+		<div class="col-md-12">
+            @if (Session::has('message'))
+                <div class="alert alert-info">{{ Session::get('message') }}</div>
+            @endif
+
+            {{ View::make('partials.article', array('article' => $article)) }}
+		</div>
+	</div>
+	<script>
+	$(document).ready(function(){
+        $('.js-lazy-youtube').click(function(){
+            var videoId = $(this).attr('data-youtube-id');
+            $(this).parent().html("<div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" src=\"//www.youtube.com/embed/" + videoId + "\?autoplay=1&vq=hd1080\" frameborder=\"0\" allowfullscreen></iframe></div>");
+        });
+	});
+	</script>
+@stop

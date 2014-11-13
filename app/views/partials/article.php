@@ -1,13 +1,13 @@
 <div class="panel panel-default">
-    <div class="panel-heading"><?php echo $article->name ?></div>
-    <div class="panel-body">
+    <div class="panel-heading"><h2><a href="/article/<?php echo $article->id ?>"><?php echo $article->name ?></a></h2></div>
+    <div class="panel-body nopadding">
         <?php if($article->type == 'embed'):?>
             <?php
-            $videoResult = Video::where('productId', $article->id)->first();
+            $videoResult = Video::where('product_id', $article->id)->first();
             if(NULL != $videoResult) {
                 if($videoResult->image)
                 {
-                    echo "<img class='img-responsive' src='http://media.".$_SERVER['SERVER_NAME']."/catalog/video/big/" . $videoResult->image."' alt='".$article->name."' title='".$article->name."' />";
+                    echo "<img class='img-responsive' src='http://".$_SERVER['SERVER_NAME']."/media/catalog/video/big/" . $videoResult->image."' alt='".$article->name."' title='".$article->name."' />";
                 }
                 elseif(preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $videoResult->url, $match))
                 { // youtube thumb
@@ -17,7 +17,7 @@
                     {
                         if(@getimagesize( ('http://i.ytimg.com/vi/'. $match[1]. '/'.$image_quality.'.jpg') ) )
                         {
-                            echo "<img class='img-responsive' src='http://i.ytimg.com/vi/$video_id/$image_quality.jpg' alt='".$article->name."' title='".$article->name."' />";
+                            echo "<i><img data-youtube-id='$match[1]' class='img-responsive js-lazy-youtube' src='http://i.ytimg.com/vi/$video_id/$image_quality.jpg' alt='".$article->name."' title='".$article->name."' /></i>";
                             break; //exiting
                         }
                     }
@@ -34,5 +34,6 @@
             }
         ?>
         <?php endif ?>
+        <p class="col-md-12"><?php echo $article->description ?></p>
     </div>
 </div>
