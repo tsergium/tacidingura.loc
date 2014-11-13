@@ -27,4 +27,12 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	$(document).ready(function(){
+        $('.js-lazy-youtube').click(function(){
+            var videoId = $(this).attr('data-youtube-id');
+            $(this).parent().html("<div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" src=\"//www.youtube.com/embed/" + videoId + "\?autoplay=1&vq=hd1080\" frameborder=\"0\" allowfullscreen></iframe></div>");
+        });
+	});
+	</script>
 @stop
