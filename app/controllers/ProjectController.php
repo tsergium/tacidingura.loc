@@ -22,6 +22,11 @@ class ProjectController extends \BaseController {
 	 */
 	public function create()
 	{
+        if(!Auth::check()) {
+            Session::flash('message', 'Not allowed!');
+            return Redirect::to('/');
+        }
+
 		$pageName = 'Create Project';
 		return View::make(
 			'project.create',

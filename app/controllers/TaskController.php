@@ -30,7 +30,8 @@ class TaskController extends \BaseController {
 	public function create($id)
 	{
         if(!Auth::check()) {
-            return Redirect::to('task');
+            Session::flash('message', 'Not allowed!');
+            return Redirect::to('/');
         }
 
 		$pageName = 'Create Task';
