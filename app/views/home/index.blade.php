@@ -16,7 +16,7 @@
                 {{ View::make('partials.article', array('article' => $value)) }}
             @endforeach
 
-			<div class="col-md-12"><?php echo $articles->links() ?></div>
+			<div class="col-md-12">{{ $articles->links() }}</div>
 		</div>
 		<div class="col-md-4">
 			<div class="panel panel-default">
