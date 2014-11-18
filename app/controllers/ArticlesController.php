@@ -10,7 +10,7 @@ class ArticlesController extends \BaseController {
     public function index()
     {
         $pageName = 'Articles List';
-        $results = Articles::orderBy('added', 'desc')->remember(10)->paginate(5);
+        $results = Articles::orderBy('added', 'desc')->paginate(5);
         View::share('seo_title', $pageName);
         return View::make('articles.index', array('articles' => $results, 'pageName' => $pageName));
     }
