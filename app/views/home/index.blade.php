@@ -13,7 +13,7 @@
             @endif
 
             @foreach($articles as $key => $value)
-                <div class="postDISABLED">{{ View::make('partials.article', array('article' => $value)) }}</div>
+                <div class="dynpost">{{ View::make('partials.article', array('article' => $value)) }}</div>
             @endforeach
 
 			<div class="col-md-12">{{ $articles->links() }}</div>

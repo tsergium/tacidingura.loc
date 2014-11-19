@@ -22,12 +22,12 @@
             }
             else
             { // vimeo thumb
-                sscanf(parse_url($url, PHP_URL_PATH), '/%d', $video_id);
-                $hash = unserialize(file_get_contents('http://vimeo.com/api/v2/video/'. $video_id .'.php'));
-                $hqUrl = $hash[0]['thumbnail_large'];
-                $hqtumb = "<img class='img-responsive' src='".$hqUrl."' alt='%s' title='%s' />";
-                $html = "";
-                $html .= sprintf($hqtumb, $name, $name);
+//                sscanf(parse_url($url, PHP_URL_PATH), '/%d', $video_id);
+//                $hash = unserialize(file_get_contents('http://vimeo.com/api/v2/video/'. $video_id .'.php'));
+//                $hqUrl = $hash[0]['thumbnail_large'];
+//                $hqtumb = "<img class='img-responsive' src='".$hqUrl."' alt='%s' title='%s' />";
+//                $html = "";
+//                $html .= sprintf($hqtumb, $name, $name);
             }
         ?>
         <?php endif ?>
