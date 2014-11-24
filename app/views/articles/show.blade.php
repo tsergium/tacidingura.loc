@@ -16,7 +16,4 @@
 		</div>
         {{ View::make('partials.disqus', array()) }}
 	</div>
-	<script>
-
-	</script>
 @stop

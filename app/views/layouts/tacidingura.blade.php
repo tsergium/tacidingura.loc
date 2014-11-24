@@ -36,8 +36,8 @@
     });
 </script>
 <script type="text/javascript">
+    // Disqus code
     var disqus_shortname = 'tacidinguraro';
-
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
