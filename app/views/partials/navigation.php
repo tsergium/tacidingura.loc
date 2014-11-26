@@ -31,7 +31,8 @@
             <?php if($loggedIn){ ?>
                 <li><a href="/auth/logout">Log Out</a></li>
             <?php }else{ ?>
-            <li><a href="/auth">Login</a></li>
+                <li><a href="/auth">Sign In</a></li>
+	            <li><a href="/auth/create">Sign Up</a></li>
             <?php } ?>
         </ul>
     </div>

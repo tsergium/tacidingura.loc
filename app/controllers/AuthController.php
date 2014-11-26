@@ -36,6 +36,39 @@ class AuthController extends \BaseController {
         }
     }
 
+	public function create()
+	{
+		return View::make('auth.create');
+	}
+
+	public function store()
+	{
+		$rules = array(
+			'email'				=> 'unique:users,email',
+			'password'			=> 'required'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails()) {
+			Session::flash('message', 'Email already exists!');
+			return Redirect::to('auth/create')
+			               ->withErrors($validator)
+			               ->withInput(Input::except('password'));
+		} else {
+			// store
+			$user = new User;
+			$user->email			    = Input::get('email');
+			$user->password		        = Hash::make(Input::get('password'));
+			$user->firstname		    = Input::get('firstname');
+			$user->lastname		        = Input::get('lastname');
+			$user->status		        = 1; // activate user
+			$user->save();
+			// redirect
+			Session::flash('message', 'Successfully created user!');
+			return Redirect::to('auth');
+		}
+	}
+
     public function logout()
     {
         if(Auth::check()) {

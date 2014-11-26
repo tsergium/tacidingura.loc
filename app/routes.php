@@ -12,6 +12,8 @@ Route::get('/article/{id}', 'ArticlesController@show');
 // auth
 Route::get('/auth', 'AuthController@index');
 Route::post('/auth/login', 'AuthController@login');
+Route::get('/auth/create', 'AuthController@create');
+Route::post('/auth/store', 'AuthController@store');
 Route::get('/auth/logout', 'AuthController@logout');
 
 // users
