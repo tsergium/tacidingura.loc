@@ -1,4 +1,7 @@
 <?php
+// api
+Route::get('/api/products', 'ApiController@index');
+
 // home
 Route::get('/', 'HomeController@index');
 Route::get('/contact', 'HomeController@contact');
