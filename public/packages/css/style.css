@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Playfair+Display');
+
+* { margin: 0; padding: 0; }
+a { text-decoration: none; }
+img { border: none; }
+.clear { clear: both; }
+.hidden { display: none; }
+.position-relative { position: relative; }
+.container-table { display: table; height: 100%; }
+.vertical-center-row { display: table-cell; vertical-align: middle; align: center; }
+li{ list-style-type:none;}
+
+html, body { height:100%; font-family: 'Roboto', sans-serif; font-size:16px; font-weight:300 }
+h1, h2, h3 {font-family: 'Roboto', sans-serif; position:relative; padding:0; margin:0; font-weight:700}
+
+/*navigare*/
+.navbar{ margin-bottom: 0; border-radius: 0; border: none}
+.navbar-default{ background-color: #0071BC}
+.navbar-default .navbar-brand {color: #fff}
+.navbar-default .navbar-nav > li > a{color: #fff; text-transform: uppercase}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{ background-color: #0071BC; color: #000}
+
+/*bannere*/
+.banner_set h1{text-transform: uppercase; color: #fff; text-shadow: 1px 1px 2px #000; text-align: center}
+.banner_home{ background-image: url(../../img/homepage-cover.jpg);}
+.banner_despre_noi{background-image: url(../../img/homepage-cover.jpg);}
+.banner_contact{background-image: url(../../img/homepage-cover.jpg);}
+
+
+
+/*filtru*/
+.filtru{ padding-bottom: 10px; padding-top: 10px}
+
+.filtru ol{margin: 0}
+.filtru ol li{display: inline; margin: 0}
+.filtru p{ text-transform:uppercase; float: right; margin: 0}
+.dropdown-toggle{text-transform:uppercase; margin-top: -2px; border: none; background: none}
+.dropdown-menu{border: none; border-radius: 0; box-shadow:0 0 0 0; left:17px}
+
+/*modul produs*/
+.modul-produs{ margin-top: 20px}
+.descriere{z-index: 13; position: absolute; bottom: 20px; margin: 0 10px}
+.descriere h1{ font-size: 27px;  text-transform: uppercase;  background-color: rgba(212, 20, 90, 0.8); display: inline; padding: 0 4px; color: #fff  }
+.descriere p{ font-size: 21px;  background: #fff;  padding: 2px 4px; font-weight: bold; display: inline-block;  margin-top: 10px; color: #D4145A}
+.descriere p span{ font-size: 16px; color: #4D4D4D; font-weight: normal; text-decoration: line-through}
+
+.descriere2{z-index: 13; position: absolute; bottom: 20px; margin: 0 10px}
+.descriere2 h1{ font-size: 27px;  text-transform: uppercase; background-color: rgba(0, 113, 188, 0.8); display: inline; padding: 0 4px; color: #fff }
+.descriere2 p{ font-size: 21px;  background: #fff;  padding: 2px 4px; font-weight: bold; display: inline-block;  margin-top: 10px; color: #0071BC}
+.descriere2 p span{ font-size: 16px; color: #4D4D4D; font-weight: normal; text-decoration: line-through}
+
+.descriere3{z-index: 13; position: absolute; bottom: 20px; margin: 0 10px}
+.descriere3 h1{ font-size: 24px;  text-transform: uppercase; background: #fff; display: inline; padding: 2px 4px; }
+.descriere3 p{ font-size: 21px;  background: #fff;  padding: 2px 4px; font-weight: bold; display: inline-block;  margin-top: 10px}
+.descriere3 p span{ font-size: 16px; color: #4D4D4D; font-weight: normal; text-decoration: line-through}
+
+/*text*/
+.text{ margin-top: 20px; margin-bottom: 20px}
+.text h1{ font-size: 27px; text-transform: uppercase; letter-spacing: 0.08em }
+.text p{ padding-top: 10px; font-size: 15px; text-align: justify; letter-spacing: 0.08em}
+.text ul{padding-left: 15px}
+.text ul li{ padding-top: 8px}
+
+/*etichete reducere*/
+.rebon1{ background-image: url("../../img/rebon1.png"); background-repeat: no-repeat; z-index: 12; position: absolute; right: 15px; width: 70px; height: 70px;}
+.rebon1 p{color: #fff; font-size: 23px; font-weight: bold; padding: 10px 0 0 17px; background: none}
+.rebon2{background-image: url("../../img/rebon2.png"); background-repeat: no-repeat; z-index: 12; position: absolute; right: 15px; width: 70px; height: 70px;}
+.rebon2 p{color: #fff; font-size: 23px; font-weight: bold; padding: 10px 0 0 17px; background: none}
+.rebon3{}
+
+/*categori*/
+.categori{ background-color: #0071BC; padding-top: 15px; padding-bottom: 15px; margin-top: 20px}
+.categori h1{color:#fff; font-size: 21px; text-align: center; text-transform: uppercase;}
+.categori p{color: #fff; text-align: center; padding-top: 4px; font-size: 14px }
+.categori p span{font-size: 18px; font-weight: bold}
+
+/*footer*/
+.footer{ background-color: #E6E6E6; padding-top: 10px}
+.footer p{ text-align: center; font-size: 14px}
+
+/*bg color*/
+.light-grey{ background-color: #E6E6E6}
+
+/*form*/
+.form-horizontal{ margin-bottom: 60px}
+.form-horizontal .control-label{ padding-bottom: 10px}
+.btn1{ background-color: #0071BC; color: #fff; border: none; border-radius: 4px; padding: 8px 38px}
+
+.form-control2{height: 60px; width: 100%; border-radius: 6px 0 0 6px; padding: 12px; font-size: 24px; border: 1px solid #cccccc; display:block; box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075); transition:border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; vertical-align:middle; border-right: none}
+.btn2{padding: 10px 18px 6px 18px; font-size: 30px; border-radius: 0 6px 6px 0; }
+.btn2:hover{background-color: #0071BC; color: #fff}
+.input-group .form-control2{background-color: rgba(255, 255, 255, 0.9);}
+
+
+
+@media (max-width: 750px) {
+	.banner_set{ height: 400px;background-repeat: no-repeat; background-size: cover; background-position: center}
+	.banner_set h1{margin-top: 50%; font-size: 44px}
+	.input-group{margin-top: 10px}
+	
+	
+	}
+@media (min-width: 750px) {
+	.banner_set{ height: 600px;background-repeat: no-repeat; background-size: cover; background-position: center}
+	.banner_set h1{margin-top: 26%; font-size: 72px }
+	.input-group{margin-top: 20px}
+	
+	
+	}
+@media (min-width: 1000px) {
+	
+	
+
+	
+	}
+

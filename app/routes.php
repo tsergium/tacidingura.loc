@@ -1,6 +1,10 @@
 <?php
 // home
 Route::get('/', 'HomeController@index');
+Route::get('/contact', 'HomeController@contact');
+Route::get('/faq', 'HomeController@faq');
+Route::get('/despre_noi', 'HomeController@about');
+Route::get('/termeni_si_conditi', 'HomeController@terms');
 
 // tenancy
 Route::get('/tenancy', 'TenancyController@index');

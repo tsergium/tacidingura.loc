@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'tacidingura.loc',
+			'database'  => 'tacidingura',
 			'username'  => 'root',
-			'password'  => 'luxaeterna',
+			'password'  => '?>123getTOknow',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
