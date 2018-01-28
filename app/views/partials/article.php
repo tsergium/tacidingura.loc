@@ -29,7 +29,7 @@
 //                $html = "";
 //                $html .= sprintf($hqtumb, $name, $name);
             }
-        ?>
+            ?>
         <?php endif ?>
         <p class="col-md-12"><?php echo $article->description ?></p>
     </div>

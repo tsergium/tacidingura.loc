@@ -45,9 +45,16 @@
 	</div>
 </div>
 
+@if (Session::has('message'))
+	<div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
+
 <!--inceput produse-->
 <div class="container">
 	<div class="row">
+		@foreach($products as $key => $value)
+			{{ View::make('partials.product', array('product' => $value)) }}
+		@endforeach
 		<div class="col-sm-3">
 			<div class="modul-produs">
 				<div class="rebon1"><p>50%</p></div>
@@ -100,13 +107,6 @@
 	<div class="row">
 		
 		<div class="col-md-12">
-            @if (Session::has('message'))
-                <div class="alert alert-info">{{ Session::get('message') }}</div>
-            @endif
-
-            @foreach($articles as $key => $value)
-                <div class="dynpost">{{ View::make('partials.article', array('article' => $value)) }}</div>
-            @endforeach
 
 			<div class="col-md-12">{{ $articles->links() }}</div>
 		</div>
