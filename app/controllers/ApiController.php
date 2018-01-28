@@ -6,12 +6,7 @@ class ApiController extends \BaseController
 
     public function fetchProducts()
     {
-        $products = [
-            [
-                'id' => 1,
-                'name' => 'product'
-            ]
-        ];
+        $products = Products::paginate(12);
 
         return json_encode($products);
     }
