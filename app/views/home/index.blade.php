@@ -49,55 +49,11 @@
 	<div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
-<!--inceput produse-->
 <div class="container">
 	<div class="row">
 		@foreach($products as $key => $value)
 			{{ View::make('partials.product', array('product' => $value)) }}
 		@endforeach
-		<div class="col-sm-3">
-			<div class="modul-produs">
-				<div class="rebon1"><p>50%</p></div>
-				<img src="img/PluginzShoot2-21_1024x1024.jpg" class="img-responsive image-product">
-				<div class="descriere">
-					<h1>Keytendo Gaming Console Keyholder</h1>
-					<p><span>45.00 lei</span> / 29.00 lei</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-sm-3">
-			<div class="modul-produs">
-				<div class="rebon2"><p>30%</p></div>
-				<img src="img/PluginzShoot2-21_1024x1024.jpg" class="img-responsive image-product">
-				<div class="descriere2">
-					<h1>Keytendo Gaming Console Keyholder</h1>
-					<p><span>45.00 lei</span> / 29.00 lei</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-sm-3">
-			<div class="modul-produs">
-				<div class="rebon1"><p>50%</p></div>
-				<img src="img/PluginzShoot2-21_1024x1024.jpg" class="img-responsive image-product">
-				<div class="descriere">
-					<h1>Keytendo Gaming Console Keyholder</h1>
-					<p><span>45.00 lei</span> / 29.00 lei</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-sm-3">
-			<div class="modul-produs">
-				<div class="rebon2"><p>30%</p></div>
-				<img src="img/PluginzShoot2-21_1024x1024.jpg" class="img-responsive image-product">
-				<div class="descriere2">
-					<h1>Keytendo Gaming Console Keyholder</h1>
-					<p><span>45.00 lei</span> / 29.00 lei</p>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 
@@ -108,7 +64,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>CategOrii:</h1>
+				<h1>Categorii:</h1>
 				<p>JOCURI <span>/ IT /</span> ELECTROCASNICE / MAMA SI COPILU<span> / TELEVIZOARE</span></p>
 			</div>
 		</div>
