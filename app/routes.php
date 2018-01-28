@@ -1,6 +1,6 @@
 <?php
 // api
-Route::get('/api/products', 'ApiController@index');
+Route::get('/api/products', 'ApiController@fetchProducts');
 
 // home
 Route::get('/', 'HomeController@index');

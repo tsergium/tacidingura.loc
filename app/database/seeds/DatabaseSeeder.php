@@ -1,17 +1,25 @@
 <?php
 
-class DatabaseSeeder extends Seeder {
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
-		Eloquent::unguard();
+class DatabaseSeeder extends Seeder
+{
 
-		// $this->call('UserTableSeeder');
-	}
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Eloquent::unguard();
 
+        // $this->call('UserTableSeeder');
+        DB::table('products')->insert([
+            'name' => str_random(10),
+            'oldPrice' => rand(1, 9) * 3.5 * 10,
+            'newPrice' => rand(1, 9) * 3.5 * 10,
+        ]);
+    }
 }
