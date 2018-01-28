@@ -12,7 +12,7 @@ class UpdateProductsAddLinkAndDescription extends Migration {
 	 */
 	public function up()
 	{
-        Schema::table('users', function($table) {
+        Schema::table('products', function($table) {
             $table->text('description');
             $table->string('url');
             $table->string('affiliateUrl');
@@ -26,7 +26,7 @@ class UpdateProductsAddLinkAndDescription extends Migration {
 	 */
 	public function down()
 	{
-        Schema::table('users', function($table) {
+        Schema::table('products', function($table) {
             $table->dropColumn('paid');
             $table->dropColumn('url');
             $table->dropColumn('affiliateUrl');
