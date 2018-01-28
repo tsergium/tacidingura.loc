@@ -299,7 +299,7 @@ class JUpload {
 		$ret .= '      type = "application/x-java-applet;version=1.5"'.$N;
 		foreach ($params as $key => $val)
 		$ret .= '      '.$key.' = "'.$val.'"'.$N;
-		$ret .= '      pluginspage = "http://java.sun.com/products/plugin/index.html#download">'.$N;
+		$ret .= '      pluginspage = "http://java.sun.com/product/plugin/index.html#download">'.$N;
 		$ret .= '      <noembed>'.$N;
 		$ret .= '        Java 1.5 or higher plugin required.'.$N;
 		$ret .= '      </noembed>'.$N;

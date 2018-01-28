@@ -2,6 +2,7 @@
 
 class UserController extends \BaseController {
 	protected $layout = 'layouts.master';
+
 	/**
 	 * Display a listing of the resource.
 	 *

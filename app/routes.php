@@ -1,6 +1,6 @@
 <?php
 // api
-Route::get('/api/products', 'ApiController@fetchProducts');
+Route::get('/api/product', 'ApiController@fetchProducts');
 
 // home
 Route::get('/', 'HomeController@index');
@@ -8,6 +8,10 @@ Route::get('/contact', 'HomeController@contact');
 Route::get('/faq', 'HomeController@faq');
 Route::get('/despre_noi', 'HomeController@about');
 Route::get('/termeni_si_conditi', 'HomeController@terms');
+
+// product
+Route::get('/product', 'ProductController@index');
+Route::get('/product/create', 'ProductController@create');
 
 // tenancy
 Route::get('/tenancy', 'TenancyController@index');
