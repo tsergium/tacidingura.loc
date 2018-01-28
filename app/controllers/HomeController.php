@@ -6,7 +6,7 @@ class HomeController extends \BaseController {
 	public function index()
 	{
         $pageName = 'Recent Products';
-        $results = Products::orderBy('created_at', 'desc')->remember(10)->paginate(5);
+        $results = Products::orderBy('created_at', 'desc')->remember(10)->paginate(12);
         View::share('seo_title', $pageName);
 
         return View::make('home.index', array('products' => $results, 'pageName' => $pageName));
