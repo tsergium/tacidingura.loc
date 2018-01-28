@@ -101,20 +101,7 @@
 	</div>
 </div>
 
-
-<!--continut-->
-<div class="container">
-	<div class="row">
-		
-		<div class="col-md-12">
-
-			<div class="col-md-12">{{ $articles->links() }}</div>
-		</div>
-		
-	</div>
-</div>
-
-
+<div class="col-md-12">{{ $products->links() }}</div>
 
 <!--inceput filtru categorii-->
 <div class="container-fluid categori">
