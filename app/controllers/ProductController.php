@@ -12,7 +12,7 @@ class ProductController extends \BaseController
     public function index()
     {
         $pageName = 'Products List';
-        $results = Products::paginate(12);
+        $results = Product::paginate(12);
 
         return View::make('product.index', [
             'products' => $results,
@@ -56,15 +56,15 @@ class ProductController extends \BaseController
                 ->withInput(Input::except('password'));
         } else {
             // store
-            $user = new User;
-            $user->name         = Input::get('name');
-            $user->oldPrice		= Input::get('oldPrice');
-            $user->newPrice		= Input::get('newPrice');
-            $user->description	= Input::get('description');
-            $user->url		    = Input::get('url');
-            $user->affiliateUrl = Input::get('affiliateUrl');
-            $user->image        = Input::get('image');
-            $user->save();
+            $product = new Product;
+            $product->name          = Input::get('name');
+            $product->oldPrice		= Input::get('oldPrice');
+            $product->newPrice		= Input::get('newPrice');
+            $product->description	= Input::get('description');
+            $product->url		    = Input::get('url');
+            $product->affiliateUrl  = Input::get('affiliateUrl');
+            $product->image         = Input::get('image');
+            $product->save();
             //DB::insert('insert into users (firstname, lastname, gender) values (?, ?)', array(Input::get('firstname'), Input::get('lastname'), Input::get('gender')));
             // redirect
             Session::flash('message', 'Successfully created product!');
