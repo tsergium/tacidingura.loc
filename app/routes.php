@@ -12,6 +12,7 @@ Route::get('/termeni_si_conditi', 'HomeController@terms');
 // product
 Route::get('/product', 'ProductController@index');
 Route::get('/product/create', 'ProductController@create');
+Route::post('product/store', 'ProductController@store');
 
 // tenancy
 Route::get('/tenancy', 'TenancyController@index');
