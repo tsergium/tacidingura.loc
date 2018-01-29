@@ -35,6 +35,18 @@ class ProductController extends \BaseController
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        return View::make('product.edit', array('product' => $product));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @return Response

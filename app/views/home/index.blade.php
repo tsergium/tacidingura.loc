@@ -52,7 +52,7 @@
 <div class="container">
 	<div class="row">
 		@foreach($products as $key => $value)
-			{{ View::make('partials.product', array('product' => $value)) }}
+			@include('partials.product', array('product' => $value))
 		@endforeach
 	</div>
 </div>
