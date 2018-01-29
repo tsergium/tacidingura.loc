@@ -14,21 +14,36 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('lastname', 'Lastname') }}
-        {{ Form::text('lastname', Input::old('lastname'), array('class' => 'form-control')) }}
+        {{ Form::label('oldPrice', 'Old Price') }}
+        {{ Form::text('oldPrice', Input::old('oldPrice'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('gender', 'Gender') }}
-        {{ Form::select('gender', array('0' => 'Male', '1' => 'Female'), Input::old('gender'), array('class' => 'form-control')) }}
+        {{ Form::label('newPrice', 'New Price') }}
+        {{ Form::text('newPrice', Input::old('newPrice'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('facebook_id', 'Facebook Id') }}
-        {{ Form::text('facebook_id', Input::old('facebook_id'), array('class' => 'form-control')) }}
+        {{ Form::label('description', 'Description') }}
+        {{ Form::text('description', Input::old('description'), array('class' => 'form-control')) }}
     </div>
 
-    {{ Form::submit('Create the User!', array('class' => 'btn btn-primary')) }}
+    <div class="form-group">
+        {{ Form::label('url', 'URL') }}
+        {{ Form::text('url', Input::old('url'), array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('affiliateUrl', 'Affiliate URL') }}
+        {{ Form::text('affiliateUrl', Input::old('affiliateUrl'), array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+        {{ Form::label('image', 'Image') }}
+        {{ Form::text('image', Input::old('image'), array('class' => 'form-control')) }}
+    </div>
+
+    {{ Form::submit('Create the Product!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 @stop

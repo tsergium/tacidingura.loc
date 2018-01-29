@@ -58,7 +58,9 @@ class ProductController extends \BaseController
             // store
             $user = new User;
             $user->name         = Input::get('name');
+            $user->oldPrice		= Input::get('oldPrice');
             $user->newPrice		= Input::get('newPrice');
+            $user->description	= Input::get('description');
             $user->url		    = Input::get('url');
             $user->affiliateUrl = Input::get('affiliateUrl');
             $user->image        = Input::get('image');
