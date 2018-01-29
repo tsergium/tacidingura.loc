@@ -7,7 +7,7 @@
         <!-- if there are creation errors, they will show here -->
         {{ HTML::ul($errors->all()) }}
 
-        {{ Form::model($product, array('url' => 'product/store')) }}
+        {{ Form::model($product, array('url' => 'product/'.$product->id.'/update')) }}
 
             <div class="form-group">
                 {{ Form::label('name', 'Name') }}

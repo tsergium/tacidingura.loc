@@ -14,6 +14,7 @@ Route::get('/product', 'ProductController@index');
 Route::get('/product/create', 'ProductController@create');
 Route::get('/product/{id}/edit', 'ProductController@edit');
 Route::post('/product/store', 'ProductController@store');
+Route::post('/product/{id}/update', 'ProductController@update');
 
 // tenancy
 Route::get('/tenancy', 'TenancyController@index');

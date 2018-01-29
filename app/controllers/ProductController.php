@@ -53,17 +53,17 @@ class ProductController extends \BaseController
      */
     public function store()
     {
-        $rules = array(
+        $rules = [
             'name'		    => 'required',
             'newPrice'		=> 'required',
             'url'		    => 'required',
             'affiliateUrl'	=> 'required',
             'image'		    => 'required',
-        );
+        ];
         $validator = Validator::make(Input::all(), $rules);
-        // process the mata
+
         if ($validator->fails()) {
-            return Redirect::to('user/create')
+            return Redirect::to('product/create')
                 ->withErrors($validator)
                 ->withInput(Input::except('password'));
         } else {
@@ -80,6 +80,48 @@ class ProductController extends \BaseController
             //DB::insert('insert into users (firstname, lastname, gender) values (?, ?)', array(Input::get('firstname'), Input::get('lastname'), Input::get('gender')));
             // redirect
             Session::flash('message', 'Successfully created product!');
+            return Redirect::to('product');
+        }
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = [
+            'name'		    => 'required',
+            'newPrice'		=> 'required',
+            'url'		    => 'required',
+            'affiliateUrl'	=> 'required',
+            'image'		    => 'required',
+        ];
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('product/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+            $product = Product::find($id);
+            $product->name          = Input::get('name');
+            $product->oldPrice		= Input::get('oldPrice');
+            $product->newPrice		= Input::get('newPrice');
+            $product->description	= Input::get('description');
+            $product->url		    = Input::get('url');
+            $product->affiliateUrl  = Input::get('affiliateUrl');
+            $product->image         = Input::get('image');
+            $product->save();
+
+            // redirect
+            Session::flash('message', 'Successfully updated product!');
             return Redirect::to('product');
         }
     }
