@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
 				<h1>Taci Din Gura si cauta!</h1>
-				{{ Form::open(['url' => 'search']) }}
+				{{ Form::open(['url' => 'search', 'method' => 'get']) }}
 					<div class="input-group">
 						{{ Form::text('query', Input::old('query'), ['class' => 'form-control2', 'placeholder' => 'Search for...']) }}
 						<span class="input-group-btn">
