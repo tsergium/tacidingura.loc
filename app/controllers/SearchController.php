@@ -4,10 +4,16 @@ class SearchController extends \BaseController
 {
     protected $layout = 'layouts.tacidingura';
 
-    public function index($searchTerm)
+    /**
+     * @param Request $request
+     *
+     * @return mixed
+     */
+    public function index(Request $request)
     {
         $pageName = 'Search Products';
-        $results = Product::search($searchTerm)->get();
+        $query = $request->input('query');
+        $results = Product::search($query)->get();
         View::share('seo_title', $pageName);
 
         return View::make('search.index', [
