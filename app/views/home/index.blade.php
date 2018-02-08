@@ -7,10 +7,12 @@
 			<div class="col-sm-10 col-sm-offset-1">
 				<h1>Taci Din Gura si cauta!</h1>
 				<div class="input-group">
+					{{ Form::open(array('url' => 'product/store')) }}
 					<input type="text" class="form-control2" placeholder="Search for...">
 					<span class="input-group-btn">
 						<button class="btn2 btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
 					</span>
+					{{ Form::close() }}
 				</div>
 			</div>
 		</div>
