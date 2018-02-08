@@ -6,11 +6,11 @@
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
 				<h1>Taci Din Gura si cauta!</h1>
-				{{ Form::open(array('url' => 'product/store')) }}
+				{{ Form::open(['url' => 'search']) }}
 					<div class="input-group">
 						{{ Form::text('query', Input::old('query'), ['class' => 'form-control2', 'placeholder' => 'Search for...']) }}
 						<span class="input-group-btn">
-							<button class="btn2 btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+							<button class="btn2 btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 						</span>
 					</div>
 				{{ Form::close() }}

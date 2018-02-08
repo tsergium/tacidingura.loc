@@ -10,7 +10,7 @@ Route::get('/despre_noi', 'HomeController@about');
 Route::get('/termeni_si_conditi', 'HomeController@terms');
 
 // search
-Route::get('/search/{keyword}', 'SearchController@index');
+Route::get('/search', 'SearchController@index');
 
 // product
 Route::get('/product', 'ProductController@index');
