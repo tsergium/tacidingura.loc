@@ -11,6 +11,7 @@ Route::get('/termeni_si_conditi', 'HomeController@terms');
 
 // search
 Route::get('/search', 'SearchController@index');
+Route::post('/search', 'SearchController@index');
 
 // product
 Route::get('/product', 'ProductController@index');
