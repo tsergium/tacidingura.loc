@@ -10,8 +10,7 @@ class SearchController extends \BaseController
     public function index()
     {
         $pageName = 'Search Products';
-        $query = Input::get('query');
-        $results = Product::search($query)->get();
+        $results = Product::where('name', 'like', '%' . Input::get('query') . '%')->paginate(12);
         View::share('seo_title', $pageName);
 
         return View::make('search.index', [
