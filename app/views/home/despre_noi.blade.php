@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Despre noi</h1>
+				<h1>{{ $pageName }}</h1>
 			</div>
 		</div>
 	</div>
