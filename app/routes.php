@@ -6,8 +6,8 @@ Route::get('/api/product', 'ApiController@fetchProducts');
 Route::get('/', 'HomeController@index');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/faq', 'HomeController@faq');
-Route::get('/despre_noi', 'HomeController@about');
-Route::get('/termeni_si_conditi', 'HomeController@terms');
+Route::get('/despre-noi', 'HomeController@about');
+Route::get('/termeni-si-conditi', 'HomeController@terms');
 
 // search
 Route::get('/search', 'SearchController@index');

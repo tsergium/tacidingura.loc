@@ -1,6 +1,6 @@
 @extends('layouts.tacidingura')
 @section('content')
-	@include('partials.breadcrumbs', ['pageName' => $pageName])
+	@include('partials.breadcrumbs', array('pageName' => $pageName))
 
 <!--continut-->
 <div class="container">
