@@ -1,7 +1,9 @@
 <div class="col-sm-3 dynpost">
     <div class="modul-produs">
         <div class="rebon1"><p>50%</p></div>
-        <img src="{{ $product->image }}" class="img-responsive image-product">
+        <a href="{{ $product->affiliateUrl }}" title="{{ $product->name }}">
+            <img src="{{ $product->image }}" class="img-responsive image-product" alt="{{ $product->name }}">
+        </a>
         <div class="descriere">
             <h1>{{ $product->name }}</h1>
             <p><span>{{ number_format($product->oldPrice, 2) }}</span> / {{ number_format($product->newPrice, 2) }} lei</p>
