@@ -20,6 +20,11 @@ class HomeController extends \BaseController {
         return View::make('home.contact', [ 'pageName' => $pageName]);
     }
 
+    public function profitshare()
+    {
+        return View::make('home.profitshare', []);
+    }
+
     public function sendContact()
     {
         if (isset($_POST["submit"])) {

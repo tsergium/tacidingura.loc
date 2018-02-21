@@ -8,6 +8,7 @@ Route::get('/contact', 'HomeController@contact');
 Route::get('/faq', 'HomeController@faq');
 Route::get('/despre-noi', 'HomeController@about');
 Route::get('/termeni-si-conditi', 'HomeController@terms');
+Route::get('/72b011c490bed009cb7ea4b6b9487226', 'HomeController@profitshare');
 
 // search
 Route::get('/search', 'SearchController@index');
